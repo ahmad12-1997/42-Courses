@@ -6,18 +6,18 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 20:54:54 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 10:31:53 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:08:28 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
-{   
-    if(!lst || !del)
-        return ;
-    del(lst->content);
-    free(lst);
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if (!lst || !del)
+		return ;
+	del (lst->content);
+	free(lst);
 }
 
 // void    ft_print_list(t_list *ptr)

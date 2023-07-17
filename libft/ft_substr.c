@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:35:15 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 15:22:55 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:11:36 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ptr == NULL)
 		return (NULL);
 	while (s[start] != '\0' && i < len)
-	{
-		ptr[i] = s[start];
-		start++;
-		i++;
-	}
+		ptr[i++] = s[start++];
 	ptr[i] = '\0';
 	return (ptr);
 }

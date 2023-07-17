@@ -6,27 +6,31 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:08:36 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 17:25:18 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:28:12 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *head_lst;
-    t_list  *temp;
-    if(!lst || !f || !del)
-        return (NULL);
-    head_lst = NULL;
-    while (lst != NULL)
-    {
-        if(!(temp = ft_lstnew((*f)(lst->content))))
-            ft_lstclear(&head_lst, del);
-        ft_lstadd_back(&head_lst, temp);
-        lst = lst->next;     
-    }   
-    return (head_lst);
+	t_list	*head_lst;
+	t_list	*temp;
+
+	if (!lst || !f || !del)
+		return (NULL);
+	head_lst = NULL;
+	while (lst != NULL)
+	{
+		temp = ft_lstnew((*f)(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&head_lst, del);
+		}
+		ft_lstadd_back(&head_lst, temp);
+		lst = lst->next;
+	}
+	return (head_lst);
 }
 // so i were modifiyning the original list that i was 
 // not supposed to do and I was adding stdup to the ft_lstnew

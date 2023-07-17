@@ -6,7 +6,7 @@
 #    By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/08 16:31:11 by akanbari          #+#    #+#              #
-#    Updated: 2023/07/17 17:16:29 by akanbari         ###   ########.fr        #
+#    Updated: 2023/07/17 20:48:29 by akanbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ NAME = libft.a
 OBJS = $(SRC:.c=.o)
 OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
-all: $(NAME) bonus
+all: $(NAME)
 
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
@@ -45,7 +45,7 @@ fclean:
 
 re: fclean all
 
-bonus : $(OBJS_BONUS)
+bonus : $(OBJS_BONUS) $(OBJS)
 	@echo "Bonus"
 	ar rcs $(NAME) $(OBJS_BONUS) $(OBJS)
 

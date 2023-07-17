@@ -6,18 +6,18 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:38:43 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/12 18:24:36 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:54:41 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
-{   
-    if (lst == NULL || new == NULL)
-        return ;
-    new->next = *lst;
-    *lst = new;
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 //you have to update lst to new head which is the address of new.
 // void    ft_print_list(t_list *ptr)
@@ -39,6 +39,4 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 //     ft_lstadd_front(&new_ptr,ptr2);
 //     ft_print_list(ptr2);
 //     free(new_ptr);
-
 // }
-

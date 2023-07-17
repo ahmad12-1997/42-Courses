@@ -6,23 +6,22 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 15:54:03 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/16 16:25:45 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:12:14 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
-{   
-    if(!lst || !f)
-        return ;
-    while(lst != NULL)
-    {
-        f(lst->content);
-        lst = lst->next;
-    }
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	if (!lst || !f)
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
 // void    ft_print_list(t_list *ptr)
 // {   
 //     if (!ptr || ptr == NULL)
@@ -46,7 +45,6 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 // {   
 //     if (!content)
 //         return  ;
-
 //     free(content);
 //     printf("Content Deleted\n");
 //     // char *con = "content deleted";
@@ -54,14 +52,12 @@ void ft_lstiter(t_list *lst, void (*f)(void *))
 // }
 // // add this line to the ft_lstclear funct to clarify 
 // //printf("node deleted\n");
-
 // int main(void)
 // {   
 //     //i have to allocate each string so i can use delete function.
 //     t_list *ptr_head = ft_lstnew(ft_strdup("Link 1"));
 //     t_list *ptr_1 = ft_lstnew(ft_strdup("Link 2"));
 //     t_list *ptr_2 = ft_lstnew(ft_strdup("Link 3"));
-
 //     //the probelm with this function that i lost 
 //     //the reference to the remaining nodes.
 //     ft_lstadd_back(&ptr_head,ptr_1);

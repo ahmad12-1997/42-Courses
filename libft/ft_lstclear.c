@@ -1,34 +1,33 @@
-// /* ************************************************************************** */
-// /*                                                                            */
-// /*                                                        :::      ::::::::   */
-// /*   ft_lstclear.c                                      :+:      :+:    :+:   */
-// /*                                                    +:+ +:+         +:+     */
-// /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
-// /*                                                +#+#+#+#+#+   +#+           */
-// /*   Created: 2023/07/14 21:13:52 by akanbari          #+#    #+#             */
-// /*   Updated: 2023/07/14 22:16:56 by akanbari         ###   ########.fr       */
-// /*                                                                            */
-// /* ************************************************************************** */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 20:10:28 by akanbari          #+#    #+#             */
+/*   Updated: 2023/07/17 21:19:58 by akanbari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list *head_tmp;
+	t_list	*head_tmp;
 
-    if (!lst || !(*lst) || !del)
-        return ;
-    head_tmp = *lst;
-    while (head_tmp != NULL)
-    {   
-        del(head_tmp->content);
-        head_tmp = head_tmp->next;
-        free(*lst);
-        *lst = head_tmp;
-    }
-    *lst = NULL;
+	if (!lst || !(*lst) || !del)
+		return ;
+	head_tmp = *lst;
+	while (head_tmp != NULL)
+	{
+		del(head_tmp->content);
+		head_tmp = head_tmp->next;
+		free(*lst);
+		*lst = head_tmp;
+	}
+	*lst = NULL;
 }
-
 // void    ft_print_list(t_list *ptr)
 // {   
 //     if (!ptr)
@@ -48,7 +47,6 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 // {   
 //     if (!content)
 //         return  ;
-
 //     free(content);
 //     printf("Content Deleted\n");
 //     // char *con = "content deleted";
@@ -56,7 +54,6 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 // }
 // // add this line to the ft_lstclear funct to clarify 
 // //printf("node deleted\n");
-
 // int main(void)
 // {   
 //     char *c= (char *)malloc(sizeof(8));
