@@ -6,65 +6,33 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:08:36 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/16 22:39:47 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 17:25:18 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//it will clear the the whole list if it failed to allocate a node.
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-//     t_list  *new_head;
-//     t_list  *temp;
-//     if(!lst || !f)
-//         return (NULL);
-//     temp = lst;
-//     while(temp != NULL)
-//     {
-//         f(temp->content);
-//         temp = temp->next;
-//     }
-//     if(!(new_head = ft_lstnew(ft_strdup(lst->content))))
-//         return (NULL);
-//     temp = new_head;
-//     while (lst->next != NULL)
-//     {   
-//         lst = lst->next;
-//         if(!(temp->next = ft_lstnew(ft_strdup(lst->content))))
-//             ft_lstclear(&new_head, del);
-//         temp = temp->next;
-//     }
-//     temp->next = NULL;
-//     return (new_head);
-// }
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list  *new_head;
+    t_list  *head_lst;
     t_list  *temp;
-    if(!lst || !f)
+    if(!lst || !f || !del)
         return (NULL);
-    temp = lst;
-    while(temp != NULL)
+    head_lst = NULL;
+    while (lst != NULL)
     {
-        f(temp->content);
-        temp = temp->next;
-    }
-    if(!(new_head = ft_lstnew(ft_strdup(lst->content))))
-        return (NULL);
-    temp = new_head;
-    while (lst->next != NULL)
-    {   
-        lst = lst->next;
-        if(!(temp->next = ft_lstnew(ft_strdup(lst->content))))
-            ft_lstclear(&new_head, del);
-        temp = temp->next;
-    }
-    temp->next = ft_lstnew(ft_strdup(lst->content));
-    return (new_head);
+        if(!(temp = ft_lstnew((*f)(lst->content))))
+            ft_lstclear(&head_lst, del);
+        ft_lstadd_back(&head_lst, temp);
+        lst = lst->next;     
+    }   
+    return (head_lst);
 }
-
-// //int ft_lstclear it is deleting a coppy of the 
+// so i were modifiyning the original list that i was 
+// not supposed to do and I was adding stdup to the ft_lstnew
+// even though thant the *f() should handle the allocation
+// and return me the address.
+//int ft_lstclear it is deleting a coppy of the 
 // void    ft_print_list(t_list *ptr)
 // {   
 //     if (!ptr || ptr == NULL)
@@ -73,18 +41,17 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 //     int i = 0;
 //     while (ptr != NULL)
 //     {   
-//         printf("node : %d , content :%s\n",i,ptr->content);
+//         printf("node : %d , content :%s\n",i,(char *)ptr->content);
 //         i++;
 //         ptr = ptr->next;
 //     }
 // }
 // void *hi_func(void *ptr)
 // {
-// //     //char str[] = " Hi .";
-// //     //ptr = ptr;
-// //     ///char *str_new = ft_memmove(ptr,str,10);
-// //     //return (str_new);
-//         return (NULL);
+//     char str[] = " Hi .";
+//     char *str_new = ft_strdup(ft_memmove(ptr,str,2));
+//     return (str_new);
+//         // return (NULL);
 // }
 // void    del_in_node(void *content)
 // {   
@@ -112,7 +79,9 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 //     ft_lstadd_back(&ptr_head,ptr_1);
 //     ft_lstadd_back(&ptr_head,ptr_2);
 //     ft_print_list(ptr_head);
-//     t_list *new_lst = ft_lstmap(ptr_head,&hi_func,&del_in_node);
+//     t_list *new_lst = ft_lstmap(ptr_head,hi_func,del_in_node);
 //     printf("After Applying ft_lstMAP\n");
 //     ft_print_list(new_lst);
+//     ft_lstclear(&ptr_head,del_in_node);
+//     ft_lstclear(&new_lst,del_in_node);
 // }

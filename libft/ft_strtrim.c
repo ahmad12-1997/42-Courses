@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:06:06 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/11 20:29:42 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 12:26:07 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i--;
 	len = i - j;
 	if (len <= 0)
-		return ("");
+		return (ft_strdup(""));
 	trimmed = (char *)malloc(len + 1);
 	if (!trimmed)
 		return (0);
-	ft_memmove(trimmed, (s1 + j), len);
+	trimmed = ft_memmove(trimmed, (s1 + j), len);
 	trimmed[len] = '\0';
 	return (trimmed);
 }
 // int main()
 // {
-//     char *s  = "hmaham";
-//     char *s2 = "ham";
-//     char *trimmed = ft_strtrim(s,s2);
-//     printf("%s",trimmed);
+//     //char *s  = "hmaham";
+//     //char *s2 = "ham";
+// 	char *s = ft_strtrim("   xxx   xxx", " x");   
+// 	//char *trimmed = ft_strtrim(s,s2);
+//     printf("%s",s);
+// 	free(s);
+
 //     //free(trimmed);
 // }

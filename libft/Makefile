@@ -6,7 +6,7 @@
 #    By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/08 16:31:11 by akanbari          #+#    #+#              #
-#    Updated: 2023/07/17 10:24:44 by akanbari         ###   ########.fr        #
+#    Updated: 2023/07/17 17:16:29 by akanbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strmapi.c  \
 
 SRC_BONUS = ft_lstadd_front.c ft_lstclear.c ft_lstnew.c ft_lstlast.c \
 			ft_lstsize.c ft_lstmap.c ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c
-CC = gcc
+CC = cc
 RM = rm -f
 NAME = libft.a
 OBJS = $(SRC:.c=.o)

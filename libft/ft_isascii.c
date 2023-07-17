@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:48:32 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/16 23:48:18 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:33:51 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-#include <stdio.h>
-#include <ctype.h>
-int main()
-{
-    char c = 'm';
-    printf("is it ascii %d\n", ft_isascii(c));
-    printf("is alpha ascii %d\n",isascii(c));
-    return (0);
-}
-
+// #include <stdio.h>
+// #include <ctype.h>
+// int main()
+// {
+//     char c = 'm';
+//     printf("is it ascii %d\n", ft_isascii(c));
+//     printf("is alpha ascii %d\n",isascii(c));
+//     return (0);
+// }

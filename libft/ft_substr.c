@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:35:15 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/09 23:01:10 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:22:55 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ptr;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
 	{
@@ -28,6 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[0] = '\0';
 		return (ptr);
 	}
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	ptr = (char *)malloc((len * sizeof(char)) + 1);
 	if (ptr == NULL)
 		return (NULL);
@@ -42,8 +44,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 // int main(void)
 // {   
-//     char *s1 = "ahmad Kanbari";
-//     char *test = ft_substr(s1 ,6,7 );
+//     char *s1 = "tripouille";
+//     char *test = ft_substr(s1 ,0,42000 );
 //     printf("%s",test);
 //     free(test);
 // }
