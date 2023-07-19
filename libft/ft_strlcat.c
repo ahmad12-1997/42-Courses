@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:20:18 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/11 19:56:16 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/18 23:22:06 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,21 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	src_len = ft_strlen(src);
 	if (dstsize == 0 && dst == NULL)
-		return (0);
+		return (src_len);
 	dest_len = ft_strlen(dst);
-	if (dest_len >= dstsize)
-		return (dstsize + src_len);
-	i = 0;
-	while ((dest_len + i) < (dstsize - 1) && src[i])
+	if (dest_len < dstsize && dstsize != 0)
 	{
-		dst[dest_len + i] = src[i];
-		i++;
+		i = 0;
+		while ((dest_len + i) < (dstsize - 1) && src[i])
+		{
+			dst[dest_len + i] = src[i];
+			i++;
+		}
+		if (i < dstsize)
+			dst[dest_len + i] = '\0';
+		return (dest_len + src_len);
 	}
-	if (i < dstsize)
-		dst[dest_len + i] = '\0';
-	return (dest_len + src_len);
+	return (dstsize + src_len);
 }
 // int main(void)
 // {   
@@ -52,4 +54,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 //     printf("Original func :%s\n   num : 
 //     %d",destValueOriginal,destlenValueOriginal);
 //     return (0);
+// }
+// int main()
+// {
+// 	char str[8] = "dest";
+// 	char *src = "src";
+// 	size_t num = ft_strlcat(str, src, 2);
+// 	printf("%s , num : %lu",str,num);	
 // }

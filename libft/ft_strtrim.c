@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 18:06:06 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 12:26:07 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/18 15:29:32 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 // int main()
 // {
-//     //char *s  = "hmaham";
-//     //char *s2 = "ham";
-// 	char *s = ft_strtrim("   xxx   xxx", " x");   
-// 	//char *trimmed = ft_strtrim(s,s2);
-//     printf("%s",s);
-// 	free(s);
+//     char *s  = "mousa";
+//     char *s2 = "mob";
+// 	//char *s = ft_strtrim("   xxx   xxx", " x");   
+// 	char *trimmed = ft_strtrim(s,s2);
+//     printf("%s",trimmed);
+// 	//free(s);
 
 //     //free(trimmed);
 // }

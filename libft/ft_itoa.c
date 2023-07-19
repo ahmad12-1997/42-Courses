@@ -6,13 +6,13 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:36:54 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/11 20:38:42 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/19 14:26:30 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len_numbers(int n)
+static int	ft_len_numbers(int n)
 {
 	int	num_len;
 
@@ -30,7 +30,7 @@ int	ft_len_numbers(int n)
 	return (num_len);
 }
 
-char	*itoa_helper(char *num_ptr, int len, int num)
+static char	*itoa_helper(char *num_ptr, int len, int num)
 {
 	if (num_ptr == NULL)
 		return (NULL);

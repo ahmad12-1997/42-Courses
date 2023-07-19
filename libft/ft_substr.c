@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 16:35:15 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 19:11:36 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/18 18:29:34 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // int main(void)
 // {   
 //     char *s1 = "tripouille";
-//     char *test = ft_substr(s1 ,0,42000 );
+//     char *test = ft_substr(s1 ,3,42000 );
 //     printf("%s",test);
 //     free(test);
 // }

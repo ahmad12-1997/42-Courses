@@ -6,7 +6,7 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:37:33 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 21:56:03 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/19 14:51:11 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_atoi_helper(const char *str, t_llint result, int *reverse, int *i)
 }
 // int main(void)
 // {   
-//     char ichar[] =   "9223372036854775807";
+//     char ichar[] =   "-9223372036854775806";
 //     int resultatoi = ft_atoi(ichar);
 //     printf("My func :%d\n",resultatoi);
 //     printf("The Original func: %d\n",atoi(ichar));

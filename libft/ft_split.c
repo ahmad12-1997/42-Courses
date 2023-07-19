@@ -6,13 +6,13 @@
 /*   By: akanbari <akanbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:15:39 by akanbari          #+#    #+#             */
-/*   Updated: 2023/07/17 21:49:22 by akanbari         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:02:28 by akanbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_num_strdup(char const *s, size_t n)
+static char	*ft_num_strdup(char const *s, size_t n)
 {
 	size_t	i;
 	char	*result;
@@ -30,7 +30,7 @@ char	*ft_num_strdup(char const *s, size_t n)
 	return (result);
 }
 
-int	ft_wordlen(char const *s, char c)
+static int	ft_wordlen(char const *s, char c)
 {
 	int	wordlen;
 
@@ -45,7 +45,7 @@ int	ft_wordlen(char const *s, char c)
 	return (wordlen);
 }
 
-int	ft_word_counter(char const *s, char c)
+static int	ft_word_counter(char const *s, char c)
 {
 	int	count;
 
@@ -68,15 +68,6 @@ int	ft_word_counter(char const *s, char c)
 			s++;
 	}
 	return (count);
-}
-
-void	ft_free(char **s, int i)
-{
-	while (i != 0)
-	{
-		free(s[i]);
-	}
-	free(s);
 }
 
 char	**ft_split(char const *s, char c)
